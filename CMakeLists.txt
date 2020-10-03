@@ -26,6 +26,7 @@ SET(HEADERS
 add_executable(flow_time ${SOURCE} ${HEADERS})
 
 # Link getopt  ... attention dll is needed
+target_link_libraries(flow_time PUBLIC Qt5::Core)
 target_link_libraries(flow_time PUBLIC Qt5::Widgets)
 
 target_include_directories(flow_time PUBLIC ${Boost_INCLUDE_DIRS})
