@@ -33,5 +33,6 @@ void MainWindow::ShowTime()
     QString text = time.toString("hh:mm");
     if ((time.second() % 2) == 0)
         text[2] = ' ';
+        
     ui->flow_clock_->display(text);
 }
