@@ -23,7 +23,7 @@ SET(HEADERS
 )
 
 # add the executable
-add_executable(flow_time WIN32 ${SOURCE} ${HEADERS})
+add_executable(flow_time ${SOURCE} ${HEADERS})
 
 # Link getopt  ... attention dll is needed
 target_link_libraries(flow_time PUBLIC Qt5::Widgets)
