@@ -14,6 +14,7 @@ SET(SOURCE
   main.cc
   mainwindow.cpp
   mainwindow.ui
+  flow_clock.cpp
   resources.qrc
 )
 
