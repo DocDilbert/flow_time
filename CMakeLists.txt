@@ -12,9 +12,9 @@ find_package(Boost 1.74.0)
 
 SET(SOURCE
   main.cc
-  mainwindow.cpp
+  mainwindow.cc
   mainwindow.ui
-  flow_clock.cpp
+  flow_clock.cc
   resources.qrc
 )
 
