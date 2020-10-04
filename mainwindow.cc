@@ -21,7 +21,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
   connect(ui->start_button_, SIGNAL(released()), this, SLOT(HandleButton()));
   connect(ui->quit_button_, SIGNAL(released()), this, SLOT(QuitButton()));
-  // ui->flow_clock_->setSegmentStyle(QLCDNumber::Outline);
+
   QTimer *timer = new QTimer(this);
   connect(timer, &QTimer::timeout, this, &MainWindow::ShowTime);
   ShowTime();

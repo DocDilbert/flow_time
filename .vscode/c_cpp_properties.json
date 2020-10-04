@@ -3,8 +3,8 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**",
                 "${workspaceFolder}/build/flow_time_autogen/include_Debug/**",
+                "${workspaceFolder}/**",
                 "${env.BOOSTROOT}/**",
                 "C:/Qt/5.15.1/msvc2019_64/include/**"
             ],
