@@ -2,5 +2,6 @@
     "cmake.configureOnOpen": true,
     "files.associations": {
         "*.ipp": "cpp"
-    }
+    },
+    "editor.formatOnSave": true
 }

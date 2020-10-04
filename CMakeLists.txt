@@ -35,7 +35,15 @@ target_include_directories(flow_time PUBLIC ${Boost_INCLUDE_DIRS})
 target_include_directories(flow_time PUBLIC
                           "${PROJECT_BINARY_DIR}"
                           ) 
-						  
+
+# Copy the style sheet
+add_custom_command(
+    TARGET flow_time POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        ${PROJECT_SOURCE_DIR}/flow_clock.qss
+        $<TARGET_FILE_DIR:flow_time>
+)
+
 # Copy qt widgets dll to build folder
 add_custom_command(
     TARGET flow_time POST_BUILD

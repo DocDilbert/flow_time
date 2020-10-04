@@ -1,13 +1,19 @@
+#include "mainwindow.h"
+#include <QApplication>
+#include <QFile>
 #include <stdio.h>
 #include <stdlib.h>
-#include <QApplication>
-#include "mainwindow.h"
 
-int main(int argc, char* argv[]) 
-{
-    QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
+int main(int argc, char *argv[]) {
+  QApplication a(argc, argv);
 
-    return a.exec();
+  QFile File("flow_clock.qss");
+  File.open(QFile::ReadOnly);
+  QString StyleSheet = QLatin1String(File.readAll());
+  a.setStyleSheet(StyleSheet);
+
+  MainWindow w;
+  w.show();
+
+  return a.exec();
 }

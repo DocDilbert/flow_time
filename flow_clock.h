@@ -1,13 +1,13 @@
 #ifndef FLOW_CLOCK_H
 #define FLOW_CLOCK_H
 
-#include <qlcdnumber.h>
+#include <QLCDNumber>
 
-class FlowClock : public QLCDNumber
-{
-    Q_OBJECT
+class FlowClock : public QLCDNumber {
+  Q_OBJECT
+
 public:
-    FlowClock(QWidget *parent = nullptr);
+  FlowClock(QWidget *parent = nullptr);
 };
 
 #endif
