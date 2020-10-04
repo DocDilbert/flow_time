@@ -12,8 +12,10 @@
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
-  // setWindowFlags(Qt::Window | Qt::MSWindowsFixedSizeDialogHint);
-  setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
+
+  setWindowFlags(Qt::Window | Qt::FramelessWindowHint |
+                 Qt::WindowStaysOnTopHint);
+  //
   this->setAttribute(Qt::WA_TranslucentBackground, true);
   ui->setupUi(this);
 
