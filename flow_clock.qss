@@ -5,7 +5,7 @@ QMainWindow {
 QPushButton {
   background-color: rgb(0, 0, 0);
   border: 2px solid;
-  /*border: 2px solid rgb(113, 113, 113);*/
+  /*  Debug -  border: 2px solid rgb(113, 113, 113);*/
   color: red;
   font: bold 16px;
 }
@@ -16,7 +16,7 @@ QWidget#centralwidget{
 }
 FlowClock{
   background-color: rgb(0, 0, 0);
-  /*border: 2px solid rgb(113, 113, 113);*/
+  /* Debug - border: 2px solid rgb(113, 113, 113); */
   border-width: 2px;
   border-radius: 10px;
   color: red;
