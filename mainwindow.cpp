@@ -1,20 +1,20 @@
 #include "mainwindow.h"
-#include "ui_mainwindow.h"
+
+#include <stdio.h>
+
 #include <QFile>
 #include <QTime>
 #include <QTimer>
-#include <stdio.h>
+
+#include "ui_mainwindow.h"
 
 #ifdef Q_OS_WIN
 #include <Windows.h>
 #include <windowsx.h>
-#endif // Q_OS_WIN
+#endif  // Q_OS_WIN
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::MainWindow) {
-
-  setWindowFlags(Qt::Window | Qt::FramelessWindowHint |
-                 Qt::WindowStaysOnTopHint);
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
+  setWindowFlags(Qt::Window | Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
   //
   this->setAttribute(Qt::WA_TranslucentBackground, true);
   ui->setupUi(this);
@@ -36,14 +36,12 @@ void MainWindow::QuitButton() { close(); }
 void MainWindow::ShowTime() {
   QTime time = QTime::currentTime();
   QString text = time.toString("hh:mm");
-  if ((time.second() % 2) == 0)
-    text[2] = ' ';
+  if ((time.second() % 2) == 0) text[2] = ' ';
 
   ui->flow_clock_->display(text);
 }
 
-bool MainWindow::nativeEvent(const QByteArray &eventType, void *message,
-                             long *result) {
+bool MainWindow::nativeEvent(const QByteArray &eventType, void *message, long *result) {
   MSG *msg = static_cast<MSG *>(message);
 
   if (msg->message == WM_NCHITTEST) {
@@ -85,29 +83,24 @@ bool MainWindow::nativeEvent(const QByteArray &eventType, void *message,
     }
     if (resizeWidth && resizeHeight) {
       // bottom left corner
-      if (x >= winrect.left && x < winrect.left + borderWidth &&
-          y < winrect.bottom && y >= winrect.bottom - borderWidth) {
+      if (x >= winrect.left && x < winrect.left + borderWidth && y < winrect.bottom && y >= winrect.bottom - borderWidth) {
         *result = HTBOTTOMLEFT;
       }
       // bottom right corner
-      if (x < winrect.right && x >= winrect.right - borderWidth &&
-          y < winrect.bottom && y >= winrect.bottom - borderWidth) {
+      if (x < winrect.right && x >= winrect.right - borderWidth && y < winrect.bottom && y >= winrect.bottom - borderWidth) {
         *result = HTBOTTOMRIGHT;
       }
       // top left corner
-      if (x >= winrect.left && x < winrect.left + borderWidth &&
-          y >= winrect.top && y < winrect.top + borderWidth) {
+      if (x >= winrect.left && x < winrect.left + borderWidth && y >= winrect.top && y < winrect.top + borderWidth) {
         *result = HTTOPLEFT;
       }
       // top right corner
-      if (x < winrect.right && x >= winrect.right - borderWidth &&
-          y >= winrect.top && y < winrect.top + borderWidth) {
+      if (x < winrect.right && x >= winrect.right - borderWidth && y >= winrect.top && y < winrect.top + borderWidth) {
         *result = HTTOPRIGHT;
       }
     }
 
-    if (*result != 0)
-      return true;
+    if (*result != 0) return true;
 
     QWidget *action = QApplication::widgetAt(QCursor::pos());
     if (action == this) {

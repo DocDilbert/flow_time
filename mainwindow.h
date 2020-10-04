@@ -11,15 +11,15 @@ class MainWindow;
 class MainWindow : public QMainWindow {
   Q_OBJECT
 
-public:
+ public:
   explicit MainWindow(QWidget *parent = 0);
   ~MainWindow();
 
-private slots:
+ private slots:
   void HandleButton();
   void QuitButton();
 
-private:
+ private:
   void ShowTime();
 
   Ui::MainWindow *ui;
@@ -27,12 +27,11 @@ private:
   bool down;
   QPoint lastPos;
 
-protected:
-  bool nativeEvent(const QByteArray &eventType, void *message,
-                   long *result) override;
+ protected:
+  bool nativeEvent(const QByteArray &eventType, void *message, long *result) override;
   void mousePressEvent(QMouseEvent *event);
   void mouseReleaseEvent(QMouseEvent *event);
   void mouseMoveEvent(QMouseEvent *event);
 };
 
-#endif // MAINWINDOW_H
+#endif  // MAINWINDOW_H

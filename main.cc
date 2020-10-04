@@ -1,8 +1,10 @@
-#include "mainwindow.h"
-#include <QApplication>
-#include <QFile>
 #include <stdio.h>
 #include <stdlib.h>
+
+#include <QApplication>
+#include <QFile>
+
+#include "mainwindow.h"
 
 int main(int argc, char *argv[]) {
   QApplication a(argc, argv);

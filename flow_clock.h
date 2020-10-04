@@ -6,7 +6,7 @@
 class FlowClock : public QLCDNumber {
   Q_OBJECT
 
-public:
+ public:
   FlowClock(QWidget *parent = nullptr);
 };
 
